@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "plugins": ["jest", "import", "filenames"],
+  "settings": {
+    "react": {
+      "version": "16.0"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:jest/recommended", "prettier"],
+  "rules": {
+    "filenames/match-regex": ["error", "^[.a-zA-Z0-9]+$"],
+    "filenames/match-exported": "error",
+    "import/default": "error",
+    "import/first": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/no-commonjs": "off",
+    "import/no-dynamic-require": "error",
+    "import/no-named-as-default-member": "error",
+    "import/no-named-as-default": "off",
+    "import/no-named-default": "error",
+    "import/no-namespace": "error",
+    "import/no-unresolved": "error",
+    "import/no-webpack-loader-syntax": "error",
+    "import/order": "error",
+    "linebreak-style": "off",
+    "no-console": "error",
+    "no-extra-bind": "error",
+    "no-implicit-globals": "error",
+    "prefer-promise-reject-errors": "error"
+  },
+  "root": true
+}
