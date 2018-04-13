@@ -22,6 +22,6 @@
     "express": "4.x",
     "graphql": "0.x",
     "graphql-tools": "2.x",
-    "lunar-core": "0.0.x"
+    "lunar-core": "0.x"
   }
 }
