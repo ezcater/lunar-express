@@ -1,6 +1,6 @@
 {
   "name": "lunar-express",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An express middleware to help provide deterministic responses to graphql queries and mutations.",
   "main": "index.js",
   "repository": {
