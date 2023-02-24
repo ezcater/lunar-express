@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const {addMockFunctionsToSchema, removeMockFunctionsFromSchema} = require('lunar-core');
-const deserialize = require('./deserialize');
+import express from 'express';
+import bodyParser from 'body-parser';
+import {addMockFunctionsToSchema, removeMockFunctionsFromSchema} from 'lunar-core';
+import deserialize from './deserialize';
 
-exports.createRouter = ({mocks, schema}) => {
+export const createRouter = ({mocks, schema}) => {
   const router = express.Router();
 
   const currentMocks = [mocks];
