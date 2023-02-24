@@ -1,0 +1,4 @@
+* @ezcater/ecommerce-experience
+
+# These two lines MUST be last in your CODEOWNERS file.
+.github/CODEOWNERS @ezcater/admins

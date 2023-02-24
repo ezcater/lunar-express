@@ -2,7 +2,21 @@
   "name": "lunar-express",
   "version": "0.0.3",
   "description": "An express middleware to help provide deterministic responses to graphql queries and mutations.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.js",
+    "lint": "run-p --aggregate-output --continue-on-error --max-parallel 2 --print-name \"lint:*\"",
+    "lint:js": "eslint . --ext .js,.ts,.tsx",
+    "lint:prettier": "prettier --check .",
+    "prepublishOnly": "yarn build",
+    "start": "tsup --watch"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ezcater/lunar-express"
@@ -15,13 +29,41 @@
   ],
   "author": "Craig Cavalier",
   "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.18.2"
+  "bugs": {
+    "url": "https://github.com/ezcater/lunar-express/issues"
+  },
+  "homepage": "https://github.com/ezcater/lunar-express#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@ezcater/prettier-config": "^1.0.1",
+    "body-parser": "^1.20.2",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "express": "^4",
+    "lunar-core": "^1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4",
+    "tsup": "^6.6.3"
   },
   "peerDependencies": {
-    "express": "4.x",
-    "graphql": "0.x",
-    "graphql-tools": "2.x",
-    "lunar-core": "<=1.x"
+    "body-parser": "^1.20.2",
+    "express": "^4",
+    "lunar-core": "^1"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.js"
+    ],
+    "splitting": true,
+    "sourcemap": "inline",
+    "clean": true,
+    "dts": false,
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "legacyOutput": true,
+    "treeshake": true
   }
 }
